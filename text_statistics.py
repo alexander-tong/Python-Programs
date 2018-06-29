@@ -1,5 +1,5 @@
 ## Developed and tested in Python 3.4.3 
-# program asks the user for a textfile name and prints the number of characters, words, and lines from that textfile.
+# Program asks the user for a textfile name and prints the number of characters, words, and lines from that textfile.
 #
 
 def main():
