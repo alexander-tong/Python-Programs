@@ -1,5 +1,7 @@
 '''
 Developed and Tested with Python 2.7.14 and ArcMap 10.6
+
+@author: Alex
 '''
 
 def atoi(text):
