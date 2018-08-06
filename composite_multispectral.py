@@ -1,3 +1,7 @@
+'''
+Developed and Tested with Python 2.7.14 and ArcMap 10.6
+'''
+
 def atoi(text):
     return int(text) if text.isdigit() else text
 
