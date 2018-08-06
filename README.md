@@ -1,1 +1,1 @@
-# python-stuff
+# Miscellaneous programs and scripts; enjoy!
