@@ -1,7 +1,7 @@
 '''
 Developed and tested in Python 3.4.3 
 
-@author: Alex
+@author: Alexander Tong
 '''
 
 def main():
