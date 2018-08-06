@@ -39,6 +39,7 @@ def rng_gen(num, num_list, min, max, type):
     
     return lists 
 
+
 def gen_col_name(lists, col_orientation):
     ''''
     Description:
@@ -99,7 +100,6 @@ def gen_col_name(lists, col_orientation):
             combined_title.append(base + ' ' + alpha_split[i]) 
     
     return combined_title 
-
 
 
 if __name__ == "__main__":
