@@ -27,8 +27,9 @@ def composite_image_recurve(directory, outfolder, *args):
     Returns:
         No returns 
         
-        $future implementation:
-            replace arcpy with gdal. 
+        $ future implementation:
+           - replace arcpy with gdal. 
+           - error handling
     ''' 
     
     import os, arcpy  
