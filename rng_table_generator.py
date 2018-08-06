@@ -1,7 +1,7 @@
 '''
 Developed and Tested with Python 2.7.14 
 
-@author: Alex
+@author: Alexander Tong
 '''
 
 def rng_gen(num, num_list, min, max, type):
