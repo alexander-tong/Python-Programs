@@ -1,9 +1,15 @@
-## Developed and tested in Python 3.4.3 
-# Program asks the user for a textfile name and prints the number of characters, words, and lines from that textfile.
-#
+'''
+Developed and tested in Python 3.4.3 
+
+@author: Alex
+'''
 
 def main():
+    '''
+    Description: Program asks the user for a textfile name and prints the number of characters, words, and lines from that textfile.
+    '''
     import os
+    
     os.chdir('Specify pathname')		#initialize me before use
     userfile = input("Specify textfile name: ")	#ensure extension of textfile is included 
 
