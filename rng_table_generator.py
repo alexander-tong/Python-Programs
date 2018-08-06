@@ -1,3 +1,7 @@
+'''
+Developed and Tested with Python 2.7.14 
+'''
+
 def rng_gen(num, num_list, min, max, type):
     '''
     Description: generates a list of list(s) with random values.
@@ -41,7 +45,7 @@ def rng_gen(num, num_list, min, max, type):
 
 
 def gen_col_name(lists, col_orientation):
-    ''''
+    '''
     Description:
         Creates list of titles to len(list) or list[i]. 
         Supports up to len 676 header names (i.e., permutations corresponding to 26*26 letters of alphabet)
