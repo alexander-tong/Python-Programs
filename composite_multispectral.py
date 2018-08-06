@@ -26,7 +26,7 @@ def composite_image_recurve(directory, outfolder, *args):
                  function operates on the default naming convention of Level-1 and Level-2 products. 
                  If composite image already exists, skip. 
 
-    Dependencies: arcpy is required. 
+    Dependencies: arcpy
     
     Args:
         directory (str): input directory to be parsed. e.g., 'C:\\Users\\EvoEco\\Desktop\\test_img\\'
