@@ -41,7 +41,7 @@ def composite_image_recurve(directory, outfolder, *args):
            - error handling
     ''' 
     
-    import os, arcpy  
+    import os, arcpy, traceback
 
     
     to_be_processed = []
@@ -191,7 +191,22 @@ def composite_image_recurve(directory, outfolder, *args):
                             print add_semi_colon[:40] + ' is already processed'
                 #ignore folders with images that have been processed already 
         except:
-            pass
+                tb = sys.exc_info()[2]
+                tbinfo = traceback.format_tb(tb)[0]
+
+                # Python Errors(s)
+                pymsg = 'PYTHON ERRORS:\nTraceback info:\n' + tbinfo +'\nErrorInfo:\n' +\
+                        str(sys.exc_type) + ':' + str(sys.exc_value) + '\n'
+
+                # Arcpy Error(s)       
+                arcpy.AddError(pymsg)
+                msgs = 'Arcpy ERRORS:\n' + arcpy.GetMessages(2) + '\n'
+
+                # Print Error(s)
+                print (pymsg + '\n')
+                print (msgs) 
+                
+                pass
 
 
 if __name__ == "__main__":
