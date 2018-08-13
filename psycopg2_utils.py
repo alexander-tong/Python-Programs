@@ -2,6 +2,8 @@
 Developed and Tested with Python 2.7.14 
 
 @author: Alexander Tong
+
+PostgreSQL database adapter for the Python programming language. A lot of functions still to be implemented. 
 '''
 
 def db_connect(host,dbname,user,password):
