@@ -102,8 +102,8 @@ def create_table(connection, statement):
     Description: create a table
     
     Args:
-        connection (function):
-        statement (str):
+        connection (function): use def db_connect() as input e.g., connection = db_connect(*args)
+        statement (str): SQL statement 
             
     Returns: 
         if table does not exist, return True
@@ -132,9 +132,12 @@ def commit_table(connection, create_table, statement):
     '''
     Description: commit a table
     
-    $ table doesn't exist, create
-    $ if doesn't exist and has NO rows, use 'CREATE TABLE IF NOT EXISTS' 
-    $ check if table exists by asking for first row... 
+    Args:
+        connection (function): use def db_connect() as input e.g., connection = db_connect(*args)
+        create_table (function): use def create_table(*args) as input e.g., create_table = create_table(*args)
+        statement (str): SQL statement 
+    
+    Return
     '''
     import psycopg2
     try:
@@ -161,10 +164,10 @@ def table_exists(connection, table):
     Description: This function only works if the table is not empty. 
     
     Args:
-        connection (function):
+        connection (function): use def db_connect() as input e.g., connection = db_connect(*args)
         table (str): input schema.tablename 
     
-    Returns:
+    Return:
         Return boolean True if table is not empty 
     '''
     import psycopg2
@@ -193,6 +196,13 @@ def table_exists(connection, table):
    
 def commit_drop(connection, table):
     '''
+    Description:
+        
+    Args:
+        connection (function): use def db_connect() as input e.g., connection = db_connect(*args)
+        statement (str): SQL statement  
+        
+    Return
     '''
     import psycopg2
     
@@ -207,7 +217,13 @@ def commit_drop(connection, table):
 
 def commit_insert(connection, statement):
     '''
-    Description: drop specified table
+    Description: drop target table
+    
+    Args:
+        connection (function): use def db_connect() as input e.g., connection = db_connect(*args)
+        statement (str): SQL statement  
+        
+    Return    
     '''
     import psycopg2
     
@@ -224,6 +240,12 @@ def commit_insert(connection, statement):
 def commit_delete(connection, statement):
     '''
     Description: delete specified row(s) from table
+    
+    Args:
+        connection (function): use def db_connect() as input e.g., connection = db_connect(*args)
+        statement (str): SQL statement  
+        
+    Return    
     '''
     import psycopg2
     
@@ -240,13 +262,19 @@ def commit_delete(connection, statement):
 
 def copy_to_db(connection, filename):
     '''
+    Description:
+        
+    Args: 
+        connection (function): use def db_connect() as input e.g., connection = db_connect(*args)
+        filename (str): *csv
+    
+    Return:
+        No returns or exchanges.
+        
     $ to be implemented:
         .txt
         binary 
-        
-    $ need to create one that accepts sas files 
     '''
-    #use the copy_from instead
     if 'csv': 
         with open(filename, 'r') as f:
             # Notice that we don't need the `csv` module.
