@@ -8,7 +8,7 @@ PostgreSQL database adapter for the Python programming language. A lot of functi
 
 def db_connect(host,dbname,user,password):
     '''
-    Description: Query and Return
+    Description: connect to existing db
     
     Args:
         host (str): e.g., localhost
