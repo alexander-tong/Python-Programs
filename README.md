@@ -1,4 +1,4 @@
-# Miscellaneous Python programs and scripts. 
+# Miscellaneous Python scripts and modules. 
 
 Many of the Python files that will eventually be posted here are to contain practical functions for processing and analysis of flat files, vector and raster datasets. Due to NDA, a lot of my code cannot be openly shared. To be updated as time permits.
 
