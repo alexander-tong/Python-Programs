@@ -96,7 +96,17 @@ def db_connect_default_to_create_db(host,dbname,user,password):
 
 def create_db(connection, foldername):
     '''
-    https://stackoverflow.com/questions/34484066/create-a-postgres-database-using-python 
+    Description: create db
+    
+    Ref: https://stackoverflow.com/questions/34484066/create-a-postgres-database-using-python 
+    
+    Args:
+        connection (function): use def db_connect() as input e.g., connection = db_connect(*args)
+        foldername (str): name of db to be derived from the name of a folder that contains sql files, especially using  
+                          os.walk or os.listdir to parse through a directory. 
+
+    Returns: 
+        No returns or exchanges
     '''
     import psycopg2
     from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT 
