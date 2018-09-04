@@ -57,6 +57,63 @@ def db_close(connection):
     return connection.close()
 
 
+def db_connect_default_to_create_db(host,dbname,user,password):
+    '''
+    Description: required to connect to default db in order to create new db
+    
+    Args:
+        host (str): e.g., localhost
+        dbname (str): e.g., testdb
+        user (str): e.g., postgres
+        password (str): e.g., password
+            
+    Returns: 
+        db connection
+    '''     
+    import psycopg2
+    
+    try:
+        credentials = "host=" + host + ' ' \
+                      + "dbname=" + dbname + ' '\
+                      + "user=" + user + ' '\
+                      + "password=" + password
+        
+        connection = psycopg2.connect(credentials)
+        
+        # if == 0 connection successful; if >0 not successful  
+        if connection.closed == 0:
+            
+            print ' ' + '\n' + \
+                  '... connection successful' 
+                  
+            return connection
+    
+    except psycopg2.OperationalError as OE:
+        
+        print OE
+        print '... connection unsuccessful'
+
+
+def create_db(connection, foldername):
+    '''
+    https://stackoverflow.com/questions/34484066/create-a-postgres-database-using-python 
+    '''
+    import psycopg2
+    from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT 
+    
+    try:
+        connection.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT) 
+        cursor = connection.cursor() 
+        
+        modified_foldername = foldername.replace('-', '_')
+        
+        cursor.execute('CREATE DATABASE ' + modified_foldername)
+                
+    except psycopg2.Error as E:
+         
+        return E 
+
+    
 def query(connection, statement, fetch):
     '''
     Description: Query and Return
