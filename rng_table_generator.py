@@ -3,6 +3,8 @@ Developed and Tested with Python 2.7.14
 
 @author: Alexander Tong
 '''
+import pandas as pd
+import numpy as np
 
 def rng_gen(num, num_list, min, max, type):
     '''
@@ -109,9 +111,6 @@ def gen_col_name(lists, col_orientation):
 
 
 if __name__ == "__main__":
-    import pandas as pd
-    import numpy as np
-    
     #Generate list of list with random values 
     lists = rng_gen(15, 5, 1, 10, randint) 
     
