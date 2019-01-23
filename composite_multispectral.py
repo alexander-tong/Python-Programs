@@ -4,6 +4,21 @@ Developed and Tested with Python 2.7.14 and ArcMap 10.6
 @author: Alexander Tong
 '''
 
+import os, traceback, re
+
+# include this and arcpy licensing ad nauseum 
+if sys.version_info[0] != 2:
+    print("This script requires Python version 2.xx")
+    sys.exit(1)
+    
+try:
+    import arcpy
+    
+except ImportError as IE:
+    print (IE)
+    print ("This script requires arcpy to run")
+    sys.exit(1)
+    
 def atoi(text):
     # https://stackoverflow.com/questions/5967500/how-to-correctly-sort-a-string-with-a-number-inside 
     return int(text) if text.isdigit() else text
@@ -40,10 +55,7 @@ def composite_image_recurve(directory, outfolder, *args):
            - replace arcpy with gdal. 
            - error handling
     ''' 
-    
-    import os, arcpy, traceback
-
-    
+      
     to_be_processed = []
     
     for arg in args: 
@@ -210,8 +222,7 @@ def composite_image_recurve(directory, outfolder, *args):
 
 
 if __name__ == "__main__":
-    import re
-    
+        
     directory = r'<insert in folder path>'
     outfolder = r'<insert out folder path>'        
     
