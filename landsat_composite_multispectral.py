@@ -49,7 +49,7 @@ def composite_image_recurve(directory, outfolder, *args):
         *args (str): currently supports 3 string arguments: 'band', 'sr', 'toa'. 
        
     Returns:
-        No returns 
+        Output composite Landsat image into desired folder.
         
         $ future implementation:
            - replace arcpy with gdal. 
